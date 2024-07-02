@@ -1,0 +1,9 @@
+#!/bin/ash
+set -e
+chmod a+w /dev/pts/0
+
+if [ "${1#-}" != "$1" ]; then
+  set -- lighttpd "$@" -f "${CONFIG_FILE}"
+fi
+
+exec "$@"
