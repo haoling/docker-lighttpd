@@ -7,6 +7,11 @@ on:
         description: 'lighttpd version'
         required: true
 
+permissions:
+  contents: read
+  id-token: read
+  packages: write
+
 jobs:
   build_and_push:
     runs-on: ubuntu-latest
